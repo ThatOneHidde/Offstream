@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/roboto.css">
+        <!-- <link rel="stylesheet" href="/css/gogo.css"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+        <a href="/settings"><i class="fa fa-gear" style="font-size:36px;"></i></a>
+        <h1>OFFSTREAM</h1>
+        <div>
+          <center><button class="buttonactive" type="button" onclick="gotoMov()">Movies</button>
+          <button class="button" type="button" onclick="gotoLib()">Library</button><p id="demo"></p></center>
+        </div>
+        <div class="container">
+          <div class="container-12">
+            <ul>
+              <center><div id="movielist" class="movielist"></div></center>
+            </ul>
+
+		  </div>
+        </div>
+    </body>
+    <script>
+        document.getElementById("movielist").innerHTML = decodeURIComponent("{{movielist}}")
+
+        function gotoLib() {
+          document.getElementById("movielist").innerHTML = "Loading..";
+          location.href='/lib';
+        }
+    </script>
+</html>
