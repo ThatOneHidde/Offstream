@@ -16,7 +16,7 @@ data = ReadSettings("settings.json")
 credentialdata = ReadSettings("credentials.json")
 
 
-api = data["the_movie_database_apikey"]
+api = os.environ['apikey']
 
 usrname = credentialdata["Username"]
 passwd = credentialdata["Password"]
